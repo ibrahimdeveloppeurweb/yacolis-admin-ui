@@ -1,0 +1,61 @@
+<div class="modal-header">
+    <!-- (click)="onClose()" -->
+    <h5 class="modal-title">{{ title }}</h5>
+    <button type="button" class="btn btn-sm close basic-close" data-dismiss="modal" aria-label="Close" (click)="onClose()" >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="modal-body">
+        <!-- <div *ngIf="formError" class="alert alert-danger">
+            Veuillez renseigner tous les champs obligatoires.
+        </div> -->
+     <span class="badge bg-primary w-100 fs-6">DÉTAILS SUR LES DROITS DES PERMISSIONS</span>
+      <div class="row mt-3">
+        <div class="col-md-6 mb-2">
+          <div class="position-relative form-group">
+            <label for="first_name">Libellé : <span class="asterix mr-2">*</span></label>
+            <input type="text" class="form-control p-2" formControlName="nom" placeholder="Libellé">           
+          </div>
+        </div>
+  
+        <div class="col-md-6 mb-2">
+          <div class="position-relative form-group">
+            <label for="last_name">Description : <span class="asterix mr-2">*</span></label>
+            <input type="text" class="form-control p-2" formControlName="description" placeholder="Description">            
+          </div>
+        </div>
+      </div>
+      <span class="badge bg-primary w-100 fs-6">ATTRIBUTION DES DROITS</span>
+      <div class="row mt-3">
+        <div class="col-md-12 mb-2">
+            <div class="form-group">
+                <div class="row mb-2">
+                  <div class="col-md mt-4">
+                    <dual-list (destinationChange)="setData()" [sort]="keepSorted" [source]="source" [key]="key" [display]="display" [filter]="true"
+                      [(destination)]="confirmed" height="265px" [format]="format" [disabled]="disabled">
+                    </dual-list>
+                  </div>
+                </div>
+              </div>
+        </div>
+  
+     
+      </div>
+    
+    </div>
+    <div class="d-flex justify-content-end  align-items-center modal-footer">
+      <div>
+        <button  (click)="modal.close('ferme')" type="button" class="btn btn-secondary text-left m-1" data-dismiss="modal">
+          <i class=" mdi mdi-close-circle-outline"></i> Fermer
+        </button>
+        <button (click)="form.reset()" type="button" class="btn btn-warning m-1">
+          <i class="bx bx-brush"></i> Vider
+        </button>
+        <button type="submit" class="btn btn-success m-1">
+          <i class="bx bx-save"></i> Enregistrer
+        </button>
+      </div>
+    </div>
+  </form>
+  

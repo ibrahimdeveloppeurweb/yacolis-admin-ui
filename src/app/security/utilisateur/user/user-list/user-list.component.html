@@ -1,0 +1,71 @@
+<div class="row">
+    <!-- Filtre de recherche -->
+    <!-- <ng-template [ngxPermissionsOnly]="['USER:AGENCY:LIST', 'ROLE:AGENCY:LIST', 'SERVICE:AGENCY:LIST']"> -->
+      <app-filter class="width" [name]="true" [nameTitle]="nameTitle" [etat]="true" [etatRow]="etatRow" [etatTitle]="etatTitle" [categorie]="true" [categorieRow]="categorieRow" [categorieTitle]="categorieTitle" [dateD]="true" [dateF]="true" [create]="true"
+        [min]="true" [minTitle]="minTitle" [max]="true" [maxTitle]="maxTitle" [ordre]="true" [code]="code" [count]="true" [type]="true" [typeRow]="typeRow" (typeEvent)="onChangeLoad($event)" (filterEvent)="onFilter($event)">
+      </app-filter>
+    <!-- </ng-template> -->
+    <!-- <ng-template [ngxPermissionsExcept]="['USER:AGENCY:LIST', 'ROLE:AGENCY:LIST', 'SERVICE:AGENCY:LIST']">
+      <div class="col-md-12">
+        <app-no-droit [title]="'utilisateur'"></app-no-droit>
+      </div>
+    </ng-template> -->
+      <!-- BOUTONS DE GESTION -->
+  <div class="col-sm-12 mb-4">
+    <button  type="button" (click)="addUser()" class="btn btn-info m-1" ngbTooltip="Ajouter un utilisateur">
+      Utilisateur <i class="bx bx-user"></i>
+    </button>
+    <button type="button" (click)="addPermission()" class="btn btn-primary m-1" ngbTooltip="Ajouter une permission">
+      Permission <i class=" bx bxs-layer"></i>
+    </button>
+    <button   type="button" (click)="addService()" class="btn btn-success m-1" ngbTooltip="Ajouter un service">
+      Service <i class=" bx bxs-shopping-bag"></i>
+    </button>
+    <button  type="button" (click)="addMenu()" class="btn btn-info m-1" ngbTooltip="Configurer un menu">
+      Menus <i class=" bx bx-menu"></i>
+    </button>
+
+    <div class="btn-group m-1" [hidden]="visibilite" ngbDropdown>
+      <button class="btn btn-warning"  ngbDropdownToggle type="button">
+        Reinitialiser <i class=" bx bx-key"></i>
+      </button>
+      <div class="dropdown-menu-right" ngbDropdownMenu>
+        <a class="dropdown-item" (click)="restPassword()"   ngbTooltip="Reinitialiser mot de passe">
+          Mot de passe <i class="feather icon-key"></i>
+        </a>
+        <!-- <a class="dropdown-item"  (click)="resetAccess()" ngbTooltip="Reinitialiser les accès utilisateur">
+          Actualiser les accès <i class="fa fa-file-key"></i>
+        </a> -->
+      </div>
+    </div>
+    <div class="btn-group float-right m-1" [hidden]="visibilite" ngbDropdown>
+        <button class="btn btn-warning" ngbDropdownToggle type="button">
+            Outils <i class="ri-tools-fill"></i>
+        </button>
+        <div class="dropdown-menu-right" ngbDropdownMenu>
+          <a class="dropdown-item" ngbTooltip="Cliquez ici pour imprimer le listing">
+            Imprimer <i class="feather icon-printer"></i>
+          </a>
+          <a class="dropdown-item"  ngbTooltip="Cliquez ici pour exporter le listing">
+            Exporter <i class="fa fa-file-excel"></i>
+          </a>
+        </div>
+      </div>
+
+  </div>
+  <div class="col-sm-12">
+    <span class="badge bg-primary w-100 fs-6">LISTE DES UTILISATEURS</span> 
+  </div>
+      
+   
+
+  
+ 
+  
+
+  
+  
+    
+   
+  </div>
+  

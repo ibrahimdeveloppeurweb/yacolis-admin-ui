@@ -1,0 +1,26 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "paths": {
+      "@env*": ["./environments*"],
+      "@pages*": ["./app/pages*"],
+      "@utilisateur*": ["./app/security/utilisateur*"],
+      "@service*": ["./app/service*"],
+      "@shared*": ["./app/shared*"],
+      "@theme*": ["./app/theme*"],
+      "@model*": ["./app/model*"],
+      "@appRoot*": ["./app*"]
+    },
+    "types": [
+      "@angular/localize"
+    ]
+  },
+  "files": [
+    "src/main.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}

@@ -1,0 +1,41 @@
+
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title" id="addAmountLabel">{{title}}</h1>
+            <button type="button" class="btn-close" (click)="onClose()" ></button>
+        </div>
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="row mb-2">
+                            <div class="col-md-12">
+                                <div class="position-relative form-group">
+                                    <label for="libelle">Libelle</label>
+                                    <input type="text" formControlName="libelle" class="form-control" id="libelle"
+                                        [ngClass]="{'is-invalid': submit && f.libelle.errors,'is-valid': submit && f.libelle.valid}"
+                                        [placeholder]="'Libélle'">
+                                    <div class="invalid-feedback" *ngIf="submit && f.libelle.errors">
+                                        <div *ngIf="f.libelle.errors.required">{{required.novide}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="onClose()" type="button" class="btn btn-secondary text-left" data-dismiss="modal">
+                    Fermer <i class="ph-x align-middle"></i>
+                </button>
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,70 @@
+<div class="modal-header">
+    <!-- (click)="onClose()" -->
+    <h5 class="modal-title">{{ title }}</h5>
+    <button type="button" class="btn btn-sm close basic-close" data-dismiss="modal" aria-label="Close" (click)="onClose()" >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form autocomplete="off" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="modal-body   ">
+        <div class="col-md-12">       
+          <div class="row">
+            <span class="badge badge-primary my-2 f-14 width">
+              Détails sur le menu
+            </span>
+          </div>
+          <div class="form-group">
+            <div class="row mb-2">
+              <div class="col-md-6">
+                <label for="libelle">Libellé <span class="asterix">*</span></label>
+                <input type="text" formControlName="libelle" class="form-control" id="libelle"
+                  [ngClass]="{
+                    'is-invalid': submit && f.libelle.errors,
+                    'is-valid': submit && f.libelle.valid
+                  }" placeholder="Libellé">
+                <div class="invalid-feedback" *ngIf="submit && f.libelle.errors">
+                  <div *ngIf="f.libelle.errors.required">{{required.novide}}</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="description">Description </label>
+                <input type="text" formControlName="description" class="form-control" id="description"
+                  [ngClass]="{
+                    'is-invalid': submit && f.description.errors,
+                    'is-valid': submit && f.description.valid
+                  }" placeholder="Description">
+              </div>
+            </div>
+          </div>
+          <!-- ATTRIBUTION DES DROITS -->
+          <div class="row">
+            <span class="badge badge-primary my-2 f-14 width">
+              AJOUTER LES MENUS
+            </span>
+          </div>
+          <div class="form-group">
+            <div class="row mb-2">
+              <div class="col-md mt-4">
+                <dual-list (destinationChange)="setData()" [sort]="keepSorted" [source]="source" [key]="key" [display]="display" [filter]="true"
+                  [(destination)]="confirmed" height="265px" [format]="format" [disabled]="disabled">
+                </dual-list>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="d-flex justify-content-end  align-items-center modal-footer">
+      <div>
+        <button  (click)="modal.close('ferme')" type="button" class="btn btn-secondary text-left m-1" data-dismiss="modal">
+            <i class=" mdi mdi-close-circle-outline"></i> Fermer
+          </button>
+          <button (click)="form.reset()" type="button" class="btn btn-warning m-1">
+            <i class="bx bx-brush"></i> Vider
+          </button>
+          <button type="submit" class="btn btn-success m-1">
+            <i class="bx bx-save"></i> Enregistrer
+          </button>
+      </div>
+    </div>
+  </form>
+  
