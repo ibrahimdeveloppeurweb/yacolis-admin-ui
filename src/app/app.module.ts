@@ -20,7 +20,7 @@ import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@ang
 // import { LoadingInterceptorProvider } from './interceptor/loading.interceptor';
 import {RouterModule} from "@angular/router";
 import {NgSelectModule} from "@ng-select/ng-select";
-import { SharedModule } from '@shared/shared.module';
+import { SharedModule } from '@shared/shared.module'; 
 import { JwtInterceptor } from './interceptor/jwt-interceptor';
 import { HttpCoreInterceptor } from './interceptor/http-core.inteceptor';
 import { HandlerErrorInterceptor } from './interceptor/handler-error.interceptor';
@@ -66,7 +66,7 @@ registerLocaleData(localeFr);
   ],
   providers: [
     { provide: localeFr, useValue: 'fr-FR' },
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
+ //   { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: HttpCoreInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HandlerErrorInterceptor, multi: true },

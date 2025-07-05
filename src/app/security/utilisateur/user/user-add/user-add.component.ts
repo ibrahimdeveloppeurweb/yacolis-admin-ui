@@ -127,33 +127,33 @@ export class UserAddComponent implements OnInit {
     if (this.edit) {
       const data = { ...this.userService.getUser() }
       this.form.patchValue(data)
-      // this.f.folderUuid.setValue(data?.folder?.uuid);
+      //this.f['folderUuid'].setValue(data?.folder?.uuid);
       this.setServiceUuid(data?.service?.uuid)
       this.serviceSelected = {
         photoSrc: data?.service?.photoSrc,
         title: data?.service?.nom,
         detail: data?.service?.direction
       };
-      this.f.service.setValue(data?.service?.uuid);
-      this.f.contact.setValue(data?.telephone);
+      this.f['service'].setValue(data?.service?.uuid);
+      this.f['contact'].setValue(data?.telephone);
       this.roleRow = data.droits
     }
   }
 
   setServiceUuid(uuid) {
     if(uuid) {
-      this.f.service.setValue(uuid);
+      this.f['service'].setValue(uuid);
     } else {
-      this.f.service.setValue(null);
+      this.f['service'].setValue(null);
     }
   }
   onSexe() {
-    if(this.f.civilite.value === 'Mr') {
-      this.f.sexe.setValue('Masculin');
-    } else if(this.f.civilite.value === 'Mme') {
-      this.f.sexe.setValue('Féminin');
-    } else if(this.f.civilite.value === 'Mlle') {
-      this.f.sexe.setValue('Féminin');
+    if(this.f['civilite'].value === 'Mr') {
+      this.f['sexe'].setValue('Masculin');
+    } else if(this.f['civilite'].value === 'Mme') {
+      this.f['sexe'].setValue('Féminin');
+    } else if(this.f['civilite'].value === 'Mlle') {
+      this.f['sexe'].setValue('Féminin');
     }
   }
   onSubmit() {

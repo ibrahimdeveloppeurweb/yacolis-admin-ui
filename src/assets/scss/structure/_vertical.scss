@@ -49,12 +49,14 @@
             font-weight: $vertical-menu-item-font-weight;
 
             &.active {
-                color: $vertical-menu-item-active-color;
+                color: white;
+                //color: $vertical-menu-item-active-color;
                 background-color: var(--#{$prefix}vertical-menu-item-active-bg);
             }
 
             &:hover {
-                color: $vertical-menu-item-hover-color;
+              //  color: $vertical-menu-item-hover-color;
+              color: white;
             }
 
             i {
@@ -80,16 +82,21 @@
                     font-size: 1.05rem;
                     position: absolute;
                     right: 20px;
-                    color: $vertical-menu-title-color;
+                    //color: $vertical-menu-title-color;
+                    color: white;
                 }
 
                 &[aria-expanded=true] {
-                    color: $vertical-menu-item-active-color;
+                    color: white;
                     background-color: var(--#{$prefix}vertical-menu-item-active-bg);
+
+                    // color: $vertical-menu-item-active-color;
+                    // background-color: var(--#{$prefix}vertical-menu-item-active-bg);
 
                     &:after {
                         transform: rotate(90deg);
-                        color: $vertical-menu-item-active-color;
+                        color: white;
+                        //color: $vertical-menu-item-active-color;
                     }
 
                     &:before {

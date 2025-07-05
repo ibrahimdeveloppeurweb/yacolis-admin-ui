@@ -13,6 +13,7 @@
         "@shared*": ["./app/shared*"],
         "@theme*": ["./app/theme*"],
         "@model*": ["./app/model*"],
+        "@guard*": ["./app/guards*"],
         "@appRoot*": ["./app*"]
       },
       "sourceMap": true,

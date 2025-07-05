@@ -9,61 +9,108 @@ export const MENU: MenuItem[] = [
     {
         id: 2,
         label: 'Tableaux de bord',
-        icon: "ph-paint-brush-broad",
+        icon: "ph-gauge",
         link: '/admin/dashbaord/dash'
     },
     {
         id: 3,
-        label: 'Modules',
+        label: 'CRM',
         isTitle: true
     },
     {
         id: 4,
-        label: 'Produit',
-        icon: 'ph-chats',
+        label: 'Crm',
+        icon: 'ph-bandaids',
         subItems: [
             {
                 id: 1,
-                label: 'Produit',
-                link: '/product',
+                label: 'Voyageurs',
+                link: '/product/voyageurs',
                 parentId: 4
             },
             {
                 id: 2,
-                label: 'Type',
+                label: 'Expediteurs',
                 link: '/product/type',
                 parentId: 4
             },
             {
                 id: 3,
-                label: 'State',
+                label: 'Transporteurs',
                 link: '/product/state',
                 parentId: 4
             },
-            {
-                id: 4,
-                label: 'Rarity',
-                link: '/product/rarity',
-                parentId: 4
-            }
+          
         ]
     } ,
+     {
+        id: 5,
+        label: 'Marchands',
+        icon: 'ph-graduation-cap',
+        link: '/admin',     
+        parentId: 5,  
+    },
+ 
     {
         id: 5,
-        label: 'Paramètres',
-        isTitle: true
+        label: 'Expeditions',
+        icon: 'ph-stack-simple',
+        link: '/admin',     
+        parentId: 5,  
+    },
+    {
+        id: 51,
+        label: 'Voyages',
+        icon: 'bx bx-car',
+        link: '/admin',     
+        parentId: 5,  
     },
     {
         id: 6,
         label: 'Utilisateurs',
-        icon: 'ph-graduation-cap',
+        icon: 'ph-user-circle',
         link: '/admin/parametre/users',     
         parentId: 5,  
     },
     {
+        id: 67,
+        label: 'Discuter',
+        icon: 'bx icon nav-icon ph-chats ng-star-inserted',
+        link: '/admin',     
+        parentId: 5,  
+    },
+    {   
+        id: 68,
+        label: 'Tresorerie',
+        icon: ' bx bx-money',
+        link: '/admin',     
+        parentId: 5,  
+    },
+{   
+        id: 4,
+        label: 'Ticket',
+        icon: ' bx bx-blanket',
+        subItems: [
+            {
+                id: 1,
+                label: 'Ticket',
+                link: '/product/voyageurs',
+                parentId: 4
+            },
+            {
+                id: 2,
+                label: 'Parametre',
+                link: '/product/type',
+                parentId: 4
+            }
+          
+          
+        ]
+    } ,
+    {
         id: 7,
-        label: 'Configuration',
-        icon: 'ph-chats',
+        label: 'Parametres',
+        icon: 'ph-wrench',
         subItems: [
             {
                 id: 1,

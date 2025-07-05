@@ -1,17 +1,49 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
-
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    },
-  
-  ]
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    // "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "paths": {
+        "@env*": ["./src/environments*"],
+        "@pages*": ["./src/app/pages*"],
+        "@utilisateur*": ["./src/app/security/utilisateur*"],
+        "@service*": ["./src/app/service*"],
+        "@shared*": ["./src/app/shared*"],
+        "@theme*": ["./src/app/theme*"],
+        "@model*": ["./src/app/model*"],
+        "@guard*": ["./src/app/guards*"],
+        "@appRoot*": ["./src/app*"]
+      },
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
 }
+
 
 
 // {

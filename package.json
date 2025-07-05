@@ -82,6 +82,7 @@
     "simplebar-angular": "3.2.4",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.7.16",
+    "tsconfig-paths": "^4.2.0",
     "tslib": "^2.6.0",
     "zone.js": "0.13.1"
   },

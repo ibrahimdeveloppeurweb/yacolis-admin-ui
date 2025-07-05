@@ -63,7 +63,7 @@ export class ServiceAddComponent implements OnInit {
     if (this.edit) {
       const data = { ...this.serviceService.getService() }
       this.form.patchValue(data)
-      this.f.responsable.setValue(data?.responsable?.uuid)
+      this.f['responsable'].setValue(data?.responsable?.uuid)
     }
   }
   onSubmit() {

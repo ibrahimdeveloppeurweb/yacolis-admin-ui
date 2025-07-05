@@ -59,7 +59,7 @@ export class HandlerErrorInterceptor implements HttpInterceptor {
       (response: HttpResponseBase) => {
         this.emitter.stopLoading();
         this.emitter.allowLoading();
-        if (response instanceof HttpErrorResponse) {
+        if (response instanceof HttpErrorResponse) {          
           switch (response.status) {
             case 200: {
               if (response.message.trim() !== '') {
@@ -79,6 +79,18 @@ export class HandlerErrorInterceptor implements HttpInterceptor {
                   text: response.message
                 })
               }
+              break;
+            }
+            case 400: {
+              this.Toast.fire({
+                icon: 'warning',
+                title: 'Connexion requise: ',
+                text: 'Vous avez été déconnecté !'
+              })
+              this.modal.dismissAll();
+              this.auth.removeDataToken();
+              this.auth.removePermissionToken();
+              this.router.navigate(['/auth/login']);
               break;
             }
             case 401: {
