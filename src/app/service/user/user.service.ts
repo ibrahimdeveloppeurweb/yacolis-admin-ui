@@ -15,8 +15,8 @@ export class UserService {
   user: User
   public type: string = "";
   private urlBase = environment.publicUrl;
-  private namespace = "agency/user";
-  private url = "private/agency/user";
+  private namespace = "admin/user";
+  private url = "private/admin/user";
 
   constructor(private api: ApiService) { }
 

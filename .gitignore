@@ -1,0 +1,15 @@
+src/environments
+src/app/.DS_Store
+.DS_Store
+node_modules
+dist/
+node_modules.zip
+src.zip
+package-lock.json
+README.md
+.env
+.idea
+.angular
+.angular/
+.codegpt
+.src.zip

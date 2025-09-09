@@ -14,18 +14,6 @@
           <div class="form-group">
             <div class="row mb-2">
               <div class="col-md-4">
-                <label for="responsable">Responsable <span class="asterix">*</span></label>
-                <select formControlName="responsable" class="form-control" id="responsable"
-                [ngClass]="{
-                'is-invalid': submit && f.responsable.errors,
-                'is-valid': submit && f.responsable.valid }">
-                <option *ngFor="let item of responsables" [ngValue]="item.uuid">{{item.libelle}}</option>
-                </select>
-                <div class="invalid-feedback" *ngIf="submit && f.responsable.errors">
-                <div *ngIf="f.responsable.errors.required">{{required.novide}}</div>
-                </div>
-              </div>
-              <div class="col-md-4">
                 <label for="nom">Nom <span class="asterix">*</span></label>
                 <input type="text" formControlName="nom" class="form-control" id="nom"
                   [ngClass]="{

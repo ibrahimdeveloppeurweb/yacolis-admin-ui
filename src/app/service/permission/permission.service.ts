@@ -11,7 +11,7 @@ import { NoInternetHelper } from '@theme/utils/no-internet-helper';
 export class PermissionService {
   permission: Permission;
   public edit: boolean = false;
-  private url = 'private/agency/role';
+  private url = 'private/admin/role';
 
   constructor(private api: ApiService) {}
 

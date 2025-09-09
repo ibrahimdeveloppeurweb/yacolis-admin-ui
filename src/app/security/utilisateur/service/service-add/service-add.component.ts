@@ -38,10 +38,7 @@ export class ServiceAddComponent implements OnInit {
     this.edit = this.serviceService.edit
     this.service = this.serviceService.getService()
     this.title = (!this.edit) ? "Ajouter un service" : "Modifier le service "+this.service?.nom
-    this.userService.getList(null,null).subscribe((res) =>{
-      this.responsables = res;
-      return this.responsables
-    })
+
     this.newForm()
   }
 
@@ -52,7 +49,6 @@ export class ServiceAddComponent implements OnInit {
     this.form = this.formBuild.group({
       uuid: [null],
       id: [null],
-      responsable: [null, [Validators.required]],
       nom: [null, [Validators.required]],
       direction: [null, [Validators.required]],
       description: [null, [Validators.required]],

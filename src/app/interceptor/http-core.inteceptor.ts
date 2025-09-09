@@ -11,8 +11,8 @@ export class HttpCoreInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
         request = request.clone({
             setHeaders: {
-                'Conntent-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+             'Content-Type': 'application/json',
+            // 'Access-Control-Allow-Origin': '*'
             }
         })
 
